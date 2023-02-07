@@ -40,8 +40,12 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: const [
             Locale('en', ''), // English, no country code
+            Locale('it', '')
           ],
-
+          locale: settingsController.locale != null &&
+                  settingsController.locale!.isNotEmpty
+              ? Locale(settingsController.locale!)
+              : const Locale('en'),
           // Use AppLocalizations to configure the correct application title
           // depending on the user's locale.
           //

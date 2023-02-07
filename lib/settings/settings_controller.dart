@@ -13,6 +13,10 @@ class SettingsController with ChangeNotifier {
   // Make SettingsService a private variable so it is not used directly.
   final SettingsService _settingsService;
 
+  late String? _locale;
+
+  String? get locale => _locale;
+
   // Make ThemeMode a private variable so it is not updated directly without
   // also persisting the changes with the SettingsService.
   late ThemeMode _themeMode;
@@ -25,6 +29,7 @@ class SettingsController with ChangeNotifier {
   /// settings from the service.
   Future<void> loadSettings() async {
     _themeMode = await _settingsService.themeMode();
+    _locale = await _settingsService.locale();
 
     // Important! Inform listeners a change has occurred.
     notifyListeners();
@@ -46,5 +51,15 @@ class SettingsController with ChangeNotifier {
     // Persist the changes to a local database or the internet using the
     // SettingService.
     await _settingsService.updateThemeMode(newThemeMode);
+  }
+
+  Future<void> updateLocale(String newLocale) async {
+    if (newLocale == _locale) return;
+
+    _locale = newLocale;
+
+    notifyListeners();
+
+    await _settingsService.updateLocale(newLocale);
   }
 }

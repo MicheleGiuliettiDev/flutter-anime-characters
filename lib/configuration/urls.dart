@@ -1,0 +1,1 @@
+const String animeCharactersApi = 'https://anime-characters.azurewebsites.net/api/anime_characters_api?'; 
