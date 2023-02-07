@@ -1,0 +1,6 @@
+{
+  "appTitle": "flutter_anime_characters",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

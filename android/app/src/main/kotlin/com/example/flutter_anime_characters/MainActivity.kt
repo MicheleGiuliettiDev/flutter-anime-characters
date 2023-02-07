@@ -1,4 +1,4 @@
-package com.example.flutter_anime_character
+package com.example.flutter_anime_characters
 
 import io.flutter.embedding.android.FlutterActivity
 

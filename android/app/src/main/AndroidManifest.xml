@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_anime_character">
+    package="com.example.flutter_anime_characters">
    <application
-        android:label="flutter_anime_character"
+        android:label="flutter_anime_characters"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

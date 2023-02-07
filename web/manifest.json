@@ -1,6 +1,6 @@
 {
-    "name": "flutter_anime_character",
-    "short_name": "flutter_anime_character",
+    "name": "flutter_anime_characters",
+    "short_name": "flutter_anime_characters",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
