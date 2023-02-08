@@ -2,5 +2,9 @@
   "appTitle": "flutter_anime_characters",
   "@appTitle": {
     "description": "Anime characters"
-  }
+  },
+  "@dashboard": {
+    "errorFetchingAnimeCharacters": "Error fetching anime characters"
+  },
+  "errorFetchingAnimeCharacters": "Error fetching anime characters"
 }

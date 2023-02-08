@@ -2,5 +2,9 @@
   "appTitle": "flutter_anime_characters",
   "@appTitle": {
     "description": "Personaggi anime"
-  }
+  },
+  "@dashboard": {
+    "errorFetchingAnimeCharacters": "Errore durante il caricamento dei personaggi"
+  },
+  "errorFetchingAnimeCharacters": "Errore durante il caricamento dei personaggi"
 }

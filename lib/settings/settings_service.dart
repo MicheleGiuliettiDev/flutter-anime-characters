@@ -19,14 +19,8 @@ class SettingsService {
   }
 
   Future<String?> locale() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-
-    return sharedPreferences.getString("locale");
   }
 
   Future<void> updateLocale(String locale) async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-
-    await sharedPreferences.setString("locale", locale);
   }
 }
