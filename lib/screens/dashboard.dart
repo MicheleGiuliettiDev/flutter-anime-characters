@@ -23,10 +23,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Colors.white,
           title: Text(
-        AppLocalizations.of(context)!.appTitle,
-        style: const TextStyle(color: Colors.black),
-      )),
+            AppLocalizations.of(context)!.appTitle,
+            style: const TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,),
       backgroundColor: Colors.white,
       body: FutureBuilder(
           builder: (context, snapshot) {
@@ -41,27 +43,27 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       .errorFetchingAnimeCharacters),
                 );
               } else {
-                  return RefreshIndicator(
-                    onRefresh: () => _loadData(),
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.green),
-                      height: double.infinity,
-                      width: double.infinity,
-                      child: Consumer<AnimeCharactersController>(
-                          builder: (context, value, child) => Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ListView.separated(
-                                  itemCount: value.animeCharacters.length,
-                                  separatorBuilder: (context, index) => const SizedBox(
-                                    height: 10,
-                                  ),
-                                  itemBuilder: (context, index) => AnimeCharacterWidget(
-                                      character: value.animeCharacters[index]),
-                                ),
+                return RefreshIndicator(
+                  onRefresh: () => _loadData(),
+                  child: Container(
+                    decoration: const BoxDecoration(color: Colors.green),
+                    height: double.infinity,
+                    width: double.infinity,
+                    child: Consumer<AnimeCharactersController>(
+                      builder: (context, value, child) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListView.separated(
+                          itemCount: value.animeCharacters.length,
+                          separatorBuilder: (context, index) => const SizedBox(
+                            height: 10,
                           ),
-                                    ),
+                          itemBuilder: (context, index) => AnimeCharacterWidget(
+                              character: value.animeCharacters[index]),
+                        ),
+                      ),
                     ),
-                  );
+                  ),
+                );
               }
             }
           },
